@@ -69,7 +69,7 @@ python gitlab_audit_export.py --repo-path /path/to/repo [options]
 
 ## 🧠 Usage Examples
 
-- **Example 1: ️⃣ Local repo only**
+- **Example 1: Local repo only**
   - **Command**
   		```bash
 		python git_activity_logger.py \
@@ -79,7 +79,7 @@ python gitlab_audit_export.py --repo-path /path/to/repo [options]
 		```
   - **Description**
 		Retrieves the last **two months** of commits, branches, and user actions from the **local repository** and generates an **interactive HTML report**. |
-- **Example 2:2️⃣ Include GitLab data**
+- **Example 2: Include GitLab data**
   - **Command**
   		```bash
 		python git_activity_logger.py \
@@ -94,7 +94,7 @@ python gitlab_audit_export.py --repo-path /path/to/repo [options]
 		```
   - **Description**
 		Combines **GitLab commits, branches, and merges** with **local user actions** (from `git reflog`) into a single **CSV export**. |
-- **Example 2:3️⃣ Offline fallback mode** 
+- **Example 3: Offline fallback mode** 
   - **Command**
 		*(No GitLab URL or token required)*<br><br>When `--gitlab-url` and `--gitlab-token` are omitted, the script automatically falls back to **local Git commands**: <br><br>- `git log` → commits<br>- `git reflog` → user actions<br>- *(Optional)* `git for-each-ref` → branches (if implemented)	
   - **Description**
