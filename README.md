@@ -69,27 +69,36 @@ python gitlab_audit_export.py --repo-path /path/to/repo [options]
 
 ## 🧠 Usage Examples
 
-| **Example** | **Command** | **Description** |
-|--------------|-------------|-----------------|
-| **1️⃣ Local repo only** | 
-python git_activity_logger.py \
-  --repo-path /projects/myrepo \
-  --months 2 \
-  --output report.html
-| Retrieves the last **two months** of commits, branches, and user actions from the **local repository** and generates an **interactive HTML report**. |
-| **2️⃣ Include GitLab data** | 
-python git_activity_logger.py \
-  --repo-path /projects/myrepo \
-  --gitlab-url https://gitlab.mycompany.com \
-  --gitlab-token glpat-abcdef123456 \
-  --project-id mygroup/myrepo \
-  --start-date 01/07/2025 \
-  --end-date 30/09/2025 \
-  --format csv \
-  --output report.csv
-| Combines **GitLab commits, branches, and merges** with **local user actions** (from `git reflog`) into a single **CSV export**. |
-| **3️⃣ Offline fallback mode** 
-| *(No GitLab URL or token required)*<br><br>When `--gitlab-url` and `--gitlab-token` are omitted, the script automatically falls back to **local Git commands**: <br><br>- `git log` → commits<br>- `git reflog` → user actions<br>- *(Optional)* `git for-each-ref` → branches (if implemented) | Runs completely **offline**, useful for local-only auditing or repositories without a connected GitLab instance. |
+- **Example 1: ️⃣ Local repo only**
+  - **Command**
+  		```bash
+		python git_activity_logger.py \
+		--repo-path /projects/myrepo \
+		--months 2 \
+		--output report.html
+		```
+  - **Description**
+		Retrieves the last **two months** of commits, branches, and user actions from the **local repository** and generates an **interactive HTML report**. |
+- **Example 2:2️⃣ Include GitLab data**
+  - **Command**
+  		```bash
+		python git_activity_logger.py \
+		--repo-path /projects/myrepo \
+		--gitlab-url https://gitlab.mycompany.com \
+		--gitlab-token glpat-abcdef123456 \
+		--project-id mygroup/myrepo \
+		--start-date 01/07/2025 \
+		--end-date 30/09/2025 \
+		--format csv \
+		--output report.csv
+		```
+  - **Description**
+		Combines **GitLab commits, branches, and merges** with **local user actions** (from `git reflog`) into a single **CSV export**. |
+- **Example 2:3️⃣ Offline fallback mode** 
+  - **Command**
+		*(No GitLab URL or token required)*<br><br>When `--gitlab-url` and `--gitlab-token` are omitted, the script automatically falls back to **local Git commands**: <br><br>- `git log` → commits<br>- `git reflog` → user actions<br>- *(Optional)* `git for-each-ref` → branches (if implemented)	
+  - **Description**
+		Runs completely **offline**, useful for local-only auditing or repositories without a connected GitLab instance. |
 
 ## 🔐 Authentication
 
