@@ -1,0 +1,17 @@
+# Core dependencies
+requests>=2.31.0        # For interacting with GitLab’s REST API
+python-dateutil>=2.9.0  # For parsing and manipulating dates and time ranges
+
+# HTML output
+jinja2>=3.1.3            # For generating HTML reports with templates
+pandas>=2.2.2            # Optional: helps with easy CSV/HTML table generation
+
+# Interactive HTML tables
+jinja2-time>=0.2.0       # Optional helper for datetime formatting in templates
+# (Note: table interactivity itself is handled by client-side JS/CSS, not Python)
+
+# Local Git utilities
+GitPython>=3.1.43        # Optional: alternative to subprocess if you want a pure Python fallback
+
+# CLI / argument parsing enhancements
+argparse                 # Built-in in Python, listed here for clarity only
